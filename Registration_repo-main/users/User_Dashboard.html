@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="User Dashboard">
+    <title>User Dashboard</title>
+
+    <link rel="stylesheet" href="user_style.css">
+</head>
+
+<body>
+
+    <!-- ==================== Sidebar ==================== -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">D</span>
+            <span class="logo-text">Dashboard</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-link active">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <span class="nav-icon">👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button id="logoutBtn" class="logout-btn">
+                <span>↪</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================== Main Content ==================== -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div class="header-left">
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's your account overview.</p>
+            </div>
+
+            <div class="header-right">
+
+                <div class="notification">
+                    <span>🔔</span>
+                </div>
+
+                <div class="user-avatar">
+                    U
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================== Welcome Section ==================== -->
+        <section class="welcome-section">
+
+            <div>
+                <p class="welcome-label">Welcome back</p>
+
+                <h2>
+                    Hello, <span id="userName">User</span>!
+                </h2>
+
+                <p>
+                    Here you can view your account information and manage your profile.
+                </p>
+            </div>
+
+            <div class="welcome-icon">
+                👋
+            </div>
+
+        </section>
+
+
+        <!-- ==================== Statistics ==================== -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    👤
+                </div>
+
+                <div class="stat-info">
+                    <p>Account</p>
+                    <h3>Active</h3>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div class="stat-info">
+                    <p>Status</p>
+                    <h3>Verified</h3>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ★
+                </div>
+
+                <div class="stat-info">
+                    <p>Role</p>
+                    <h3 id="userRole">User</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== User Information ==================== -->
+        <section class="dashboard-grid">
+
+            <!-- User Information Card -->
+            <div class="card user-info-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p>Your account details</p>
+                    </div>
+
+                    <span class="card-icon">
+                        👤
+                    </span>
+
+                </div>
+
+
+                <div class="user-details">
+
+                    <div class="detail-item">
+
+                        <div class="detail-icon">
+                            👤
+                        </div>
+
+                        <div class="detail-content">
+                            <span class="detail-label">Full Name</span>
+                            <strong id="displayName">User Name</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <div class="detail-icon">
+                            ✉
+                        </div>
+
+                        <div class="detail-content">
+                            <span class="detail-label">Email Address</span>
+                            <strong id="displayEmail">
+                                user@example.com
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <div class="detail-icon">
+                            🔑
+                        </div>
+
+                        <div class="detail-content">
+                            <span class="detail-label">Account Role</span>
+                            <strong id="displayRole">User</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Account Status Card -->
+            <div class="card account-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Account Status</h2>
+                        <p>Current account information</p>
+                    </div>
+
+                    <span class="status-badge">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="account-status">
+
+                    <div class="status-circle">
+                        ✓
+                    </div>
+
+                    <h3>Your account is active</h3>
+
+                    <p>
+                        You are currently logged in and can access your dashboard.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== Quick Actions ==================== -->
+        <section class="card quick-actions">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Quick Actions</h2>
+                    <p>Manage your account</p>
+                </div>
+
+            </div>
+
+
+            <div class="actions-grid">
+
+                <button class="action-btn">
+                    <span class="action-icon">👤</span>
+                    <span>View Profile</span>
+                </button>
+
+                <button class="action-btn">
+                    <span class="action-icon">⚙</span>
+                    <span>Account Settings</span>
+                </button>
+
+                <button class="action-btn logout-action" id="logoutBtnBottom">
+                    <span class="action-icon">↪</span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== Footer ==================== -->
+        <footer class="footer">
+
+            <p>
+                © 2026 Dashboard. All rights reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+    <!-- JavaScript will be connected here -->
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
+```

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Admin Dashboard - Manage Registered Users">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+
+<body>
+
+    <!-- ==================== Sidebar ==================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">A</span>
+            <span class="logo-text">Admin Panel</span>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="#dashboard" class="nav-link active">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#user" class="nav-link">
+                <span class="nav-icon">👥</span>
+                <span>Users</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button id="logoutBtn" class="logout-btn">
+                <span>↪</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================== Main Content ==================== -->
+
+    <main class="main-content">
+
+
+        <!-- ==================== Header ==================== -->
+
+        <header class="top-header">
+
+            <div class="header-left" id="dashboard">
+
+                <h1>Admin Dashboard</h1>
+
+                <p>
+                    Manage and monitor all registered users.
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================== Welcome ==================== -->
+
+        <section class="welcome-section">
+
+            <div>
+
+                <p class="welcome-label">
+                    Administrator
+                </p>
+
+                <h2>
+                    Welcome, <span id="adminName">Admin</span>!
+                </h2>
+
+                <p>
+                    Here you can view all registered users and manage the system.
+                </p>
+
+            </div>
+
+
+            <div class="admin-icon">
+                🛡️
+            </div>
+
+        </section>
+
+
+        <!-- ==================== Statistics ==================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    👥
+                </div>
+
+                <div class="stat-info">
+
+                    <p>Total Users</p>
+
+                    <h3 id="totalUsers">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    👤
+                </div>
+
+                <div class="stat-info">
+
+                    <p>Normal Users</p>
+
+                    <h3 id="normalUsers">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    🛡️
+                </div>
+
+                <div class="stat-info">
+
+                    <p>Administrators</p>
+
+                    <h3 id="adminUsers">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================== Users Section ==================== -->
+        <section class="users-card" id="user">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Registered Users
+                    </h2>
+
+                    <p>
+                        All users registered in the system
+                    </p>
+
+                </div>
+
+
+                <div class="users-count">
+
+                    <span id="usersCount">
+                        0
+                    </span>
+
+                    Users
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== Users Table ==================== -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Email</th>
+
+                            <th>Role</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="usersTableBody">
+
+                        
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================== Admin Information ==================== -->
+
+        <section class="admin-info-card">
+
+
+            <div class="admin-info-icon">
+                🛡️
+            </div>
+
+
+            <div class="admin-info-content">
+
+                <h3>
+                    Administrator Access
+                </h3>
+
+                <p>
+                    You are logged in as an administrator.
+                    Only administrators can access this dashboard
+                    and view all registered users.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==================== Footer ==================== -->
+
+        <footer class="footer">
+
+            <p>
+                © 2026 Admin Dashboard. All rights reserved.
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>
+```
