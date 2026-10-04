@@ -20,7 +20,6 @@ const dashboard = document.getElementById("dashboard");
 const assessments = document.getElementById("assessments");
 const students = document.getElementById("students");
 const reports = document.getElementById("reports");
-dashboard
 
 
 
@@ -77,11 +76,11 @@ burgerMinu.addEventListener('click', function (e) {
 
 //======================Sitting & Log out=============================
 settings.addEventListener("click", function (e) {
-    window.location.href = "/Setting/index.html"
+    window.location.href = "../Setting/index.html"
 })
 logout.addEventListener("click", function (e) {
-    document.cookie = "name=; max-age=0;"
-    window.location.href = "/auth/login.html"
+    document.cookie = "currentUser=; max-age=0; path=/"
+    window.location.href = "../auth/login.html"
 })
 
 
@@ -92,38 +91,39 @@ dashboard.addEventListener("click", function (e) {
 })
 
 students.addEventListener("click", function (e) {
-    window.location.href = "/fuad/students.html"
+    window.location.href = "../Student/students.html"
 })
 
 assessments.addEventListener("click", function (e) {
-    window.location.href = "/Assessments/index.html"
+    window.location.href = "../Assessments/index.html"
 })
 
 reports.addEventListener("click", function (e) {
-    window.location.href = "/Reports/index.html"
+    window.location.href = "../Reports/index.html"
 })
 
 // ===================attendanceBtn=====================
 
 attendanceBtn.addEventListener("click", function (e) {
-    window.location.href = "/fuad/update.html"
+    window.location.href = "../Student/update.html"
 })
 
 // ===================INFORMATION SECTION===================
 
 
 async function getData(info) {
-    const response = await fetch(`http://localhost:3000/${info}`);
+    const savedData = localStorage.getItem(info);
 
+    if (savedData) {
+        return JSON.parse(savedData);
+    }
+
+    const response = await fetch(`http://localhost:3000/${info}`);
     const data = await response.json();
 
-    // =================================================
     localStorage.setItem(info, JSON.stringify(data));
-    // =================================================
 
-    const getData = JSON.parse(localStorage.getItem(info));
-
-    return getData;
+    return data;
 }
 
 
@@ -201,7 +201,7 @@ async function setStudentInfo() {
     absentToday.textContent = absentcount;
 
     attendanceRate.textContent =
-        ((attendcount / (attendcount + absentcount)) * 100).toFixed(1) + "%";
+        (attendcount) == 0 ?0+"%": ((attendcount / (attendcount + absentcount)) * 100).toFixed(1) + "%";
 
 
 
